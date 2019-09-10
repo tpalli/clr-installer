@@ -10,7 +10,7 @@ import (
 	"log"
 	"os"
 	"os/user"
-	"path"
+	//"path"
 	"path/filepath"
 	"regexp"
 	"runtime"
@@ -156,6 +156,7 @@ func FileExists(filePath string) (bool, error) {
 // VerifyRootUser returns an error if we're not running as root
 func VerifyRootUser() string {
 	// ProgName is the short name of this executable
+/*
 	progName := path.Base(os.Args[0])
 
 	user, err := user.Current()
@@ -168,7 +169,7 @@ func VerifyRootUser() string {
 		return fmt.Sprintf("%s MUST run as 'root' user to install! (user=%s)",
 			progName, user.Uid)
 	}
-
+*/
 	return ""
 }
 
