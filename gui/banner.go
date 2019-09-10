@@ -78,7 +78,7 @@ func NewBanner() (*Banner, error) {
 		return nil, err
 	}
 	banner.img.SetFromPixbuf(pbuf)
-	banner.img.SetPixelSize(64)
+	//banner.img.SetPixelSize(64)
 	banner.img.SetMarginTop(12)
 	banner.img.SetMarginBottom(24)
 	banner.img.SetHAlign(gtk.ALIGN_CENTER)
@@ -94,7 +94,7 @@ func NewBanner() (*Banner, error) {
 	banner.labelText.SetVAlign(gtk.ALIGN_CENTER)
 	banner.labelText.SetLineWrap(true)
 	banner.labelText.SetMaxWidthChars(22)
-	banner.labelText.SetHExpand(false)
+	//banner.labelText.SetHExpand(true)
 	banner.box.PackStart(banner.labelText, false, false, 0)
 
 	return banner, nil

@@ -123,8 +123,8 @@ func NewWindow(model *model.SystemInstall, rootDir string, options args.Args) (*
 		return nil, err
 	}
 	window.handle.SetPosition(gtk.WIN_POS_CENTER)
-	window.handle.SetDefaultSize(WindowWidth, WindowHeight)
-	window.handle.SetResizable(false)
+	//window.handle.SetDefaultSize(WindowWidth, WindowHeight)
+	window.handle.SetResizable(true)
 
 	// Create invisible header bar
 	if err = window.CreateHeaderBar(); err != nil {
@@ -166,7 +166,7 @@ func (window *Window) createWelcomePage() (*Window, error) {
 	if window.banner, err = NewBanner(); err != nil {
 		return nil, err
 	}
-	window.mainLayout.PackStart(window.banner.GetRootWidget(), false, false, 0)
+	window.mainLayout.PackStart(window.banner.GetRootWidget(), false, true, 0)
 
 	// Set up content layout and add to main layout
 	window.contentLayout, err = gtk.BoxNew(gtk.ORIENTATION_VERTICAL, 0)
